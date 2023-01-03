@@ -26,8 +26,12 @@ class ViewController: UIViewController {
     @IBAction func keyPressed(_ sender: UIButton) {
         if let title = sender.titleLabel?.text! {
             playSound(fileName: title)
+            sender.alpha /= 2
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.2){
+                sender.alpha *= 2
+            }
         }
-
+        
     }
     
     
